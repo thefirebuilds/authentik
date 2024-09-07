@@ -66,7 +66,7 @@ Enable the oidc auth method
 Configure the oidc auth method, oidc discovery url is the OpenID Configuration Issuer in your provider
 
 ```
-vault write auth/oidc/config \
+vault write identity/oidc/config \
          oidc_discovery_url="https://authentik.company/application/o/vault-slug/" \
          oidc_client_id="Client ID" \
          oidc_client_secret="Client Secret" \
@@ -76,7 +76,7 @@ vault write auth/oidc/config \
 Create the reader role
 
 ```
-vault write auth/oidc/role/reader \
+vault write identity/oidc/role/reader \
       bound_audiences="Client ID" \
       allowed_redirect_uris="https://vault.company/ui/vault/auth/oidc/oidc/callback" \
       allowed_redirect_uris="https://vault.company/oidc/callback" \
